@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marcelo Ormazabal - Profesor de Vóley</title>
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --brand:#22c55e;
+      --brand-2:#34d399;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.5}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{filter:brightness(1.1)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(15,23,42,.8);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #1f2937}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo span{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .menu{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;background:var(--brand);color:#0b1220;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:40px 0}
+    .hero .card{background:radial-gradient(80% 80% at 70% 10%,rgba(52,211,153,.18),transparent 60%),#0b1220;border:1px solid #1f2937;border-radius:16px;padding:24px}
+    .tag{display:inline-block;padding:6px 10px;border:1px solid #1f2937;border-radius:999px;color:var(--muted);font-size:14px}
+    h1{font-size:42px;line-height:1.1;margin:14px 0 6px}
+    .lead{color:var(--muted);font-size:18px}
+    .hero img{width:100%;border-radius:16px;border:1px solid #1f2937}
+
+    section{padding:48px 0}
+    h2{font-size:30px;margin:0 0 8px}
+    .section-lead{color:var(--muted);margin-bottom:24px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:18px}
+    .card h3{margin:6px 0 6px;font-size:18px}
+    .card p{color:var(--muted);margin:0}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .contact .small{font-size:14px;color:var(--muted)}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #1f2937;background:#0b1220;color:var(--text)}
+    label{font-size:14px;color:var(--muted)}
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    form .actions{display:flex;gap:10px;align-items:center}
+
+    footer{border-top:1px solid #1f2937;color:var(--muted)}
+
+    @media (max-width:900px){
+      .hero,.about,.contact{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">🏐 <span>Profesor Marcelo Ormazabal</span></div>
+      <nav class="menu">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto" class="btn">Contactar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="inicio">
+      <div class="card">
+        <span class="tag">Entrenamiento personalizado</span>
+        <h1>Potenciá tu rendimiento en Vóley</h1>
+        <p class="lead">Me especializo en entrenamientos para equipos y jugadores que buscan crecer. Consultas por WhatsApp o correo.</p>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#contacto">Pedir información</a>
+          <a href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <!-- Imagen de vóley actualizada -->
+      <img alt="Equipo de vóley" src="img/1000095719.JPG" />
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <p class="section-lead">Opciones para jugadoras y equipos.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Entrenamiento Individual</h3>
+          <p>Sesiones personalizadas para mejorar técnica y rendimiento.</p>
+        </div>
+        <div class="card">
+          <h3>Preparación de Equipo</h3>
+          <p>Planificación y conducción de entrenamientos grupales.</p>
+        </div>
+        <div class="card">
+          <h3>Asesoría Técnica</h3>
+          <p>Análisis de juego y estrategias actualizadas adaptadas a tu equipo y al nivel que necesites.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="about">
+      <div>
+        <h2>Quién soy</h2>
+        <p class="section-lead">Experiencia y dedicación en el vóley.</p>
+        <div class="card">
+          <p>Soy Marcelo Ormazabal, profesor y entrenador Nacional de vóley. Con mas de 20 años de experiencia como jugador y entrenador. Mi misión es ayudar a que jugadores y equipos alcancen su máximo potencial, trabajando técnica, táctica y motivación.</p>
+        </div>
+      </div>
+      <!-- Imagen de vóley actualizada -->
+      <img alt="Equipo de vóley entrenando" src="img/1000023625.JPG" />
+    </section>
+
+    <section id="contacto" class="contact">
+      <div>
+        <h2>Contacto</h2>
+        <p class="section-lead">Enviame un mensaje y coordinamos.</p>
+        <form onsubmit="event.preventDefault(); alert('Mensaje simulado enviado ✅');">
+          <div class="row">
+            <div>
+              <label>Nombre</label>
+              <input placeholder="Tu nombre" required />
+            </div>
+            <div>
+              <label>Correo</label>
+              <input type="email" placeholder="tucorreo@example.com" required />
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <label>Mensaje</label>
+            <textarea rows="4" placeholder="Contame qué necesitás" required></textarea>
+          </div>
+          <div class="actions" style="margin-top:12px">
+            <button class="btn" type="submit">Enviar</button>
+            <a class="tag" href="https://wa.me/5491112345678?text=Hola%20Marcelo%20quiero%20consultar%20sobre%20entrenamientos" target="_blank">WhatsApp directo</a>
+          </div>
+          <p class="small" style="margin-top:6px">También podés escribir a: <a href="mailto:contacto@tusitio.com">marcelo.ormazabal.ar@gmail.com</a></p>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Datos útiles</h3>
+        <p class="small">Ciudad: Neuquen, Argentina</p>
+        <p class="small">Horario: Escribime y coordinamos</p>
+        <p class="small">Tel: +54299-4091540</p>
+        <p class="small"><a href="#">espero tu contacto</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding:24px 0">© <span id="y"></span> Marcelo Ormazabal — Hecho con ♥︎</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
+
