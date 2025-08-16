@@ -90,6 +90,32 @@
       transition:transform .2s ease;
     }
     .grid-fotos img:hover{ transform:scale(1.02) }
+  
+    /* Galería responsive */
+    #galeria h2{ margin:0 0 8px }
+    .grid-fotos{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+      gap:12px;
+    }
+    .grid-fotos img{
+      width:100%; height:220px; object-fit:cover; border-radius:12px;
+      transition:transform .2s ease; cursor:pointer;
+    }
+    .grid-fotos img:hover{ transform:scale(1.02) }
+
+    /* Lightbox (visor de imágenes) */
+    .lightbox-backdrop{
+      position:fixed; inset:0; background:rgba(0,0,0,.85); display:none;
+      align-items:center; justify-content:center; z-index:50; padding:16px;
+    }
+    .lightbox-backdrop.active{ display:flex }
+    .lightbox-content{ position:relative; max-width:95vw; max-height:90vh }
+    .lightbox-img{ max-width:95vw; max-height:90vh; border-radius:12px; }
+    .lightbox-close{
+      position:absolute; top:-10px; right:-10px; background:#fff; color:#111; border:none;
+      border-radius:999px; padding:8px 12px; font-weight:800; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,.3);
+    }
   </style>
 </head>
 <body>
@@ -193,7 +219,9 @@
         <img src="img/1000023625.JPG" alt="Vóley 2" loading="lazy">
         <img src="img/IMG_9669.jpg" alt="Vóley 3" loading="lazy">
         <img src="img/IMG_9670.jpg" alt="Vóley 4" loading="lazy">
-        <img src="img/1000095729.JPG" alt="Vóley 5" loading="lazy">
+        <img src="img/1000095731.JPG" alt="Vóley 5" loading="lazy">
+        <img src="img/262554_216118441774325_8006086_n.jpg" alt="Vóley 6" loading="lazy">
+        <img src="img/IMG_20150904_014212.jpg" alt="Vóley 7" loading="lazy">
       </div>
     </section>
   </main>
@@ -209,6 +237,32 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  
+  <!-- Lightbox: visor de imágenes -->
+  <div class="lightbox-backdrop" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
+      <img class="lightbox-img" id="lightboxImg" alt="Imagen ampliada" />
+    </div>
+  </div>
+
+  <script>
+    // Lightbox básico sin librerías
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const lbClose = document.getElementById('lightboxClose');
+      const imgs = document.querySelectorAll('.grid-fotos img');
+      imgs.forEach(img => img.addEventListener('click', () => {
+        lbImg.src = img.getAttribute('src');
+        lb.classList.add('active');
+      }));
+      function closeLB(){ lb.classList.remove('active'); lbImg.removeAttribute('src'); }
+      lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLB(); });
+      lbClose.addEventListener('click', closeLB);
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLB(); });
+    })();
   </script>
 </body>
 </html>
